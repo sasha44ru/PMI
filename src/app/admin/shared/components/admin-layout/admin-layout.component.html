@@ -1,0 +1,17 @@
+<nav>
+  <div class="nav-wrapper light-blue darken-3">
+    <a routerLink="/" class="brand-logo ml-3">Admin</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down" *ngIf="auth.isAuth()">
+      <li routerLinkActive="active"><a [routerLink]="['dashboard']">Главная</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['create-news']">Создать новость</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['create-employees']">Добавить сотрудника</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['edit-about']">О кафедре</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['edit-applicants']">Поступающим</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['edit-contacts']">Контакты</a></li>
+      <li><a href="#" (click)="logout($event)">Выйти</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,101 @@
+.heading-h1 {
+  font-size: 36px;
+  line-height: 45px;
+  // line-height: 40px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.heading-h2 {
+  font-size: 26px;
+  line-height: 32px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.heading-h3 {
+  font-size: 19px;
+  line-height: 24px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.heading-h4 {
+  font-size: 17px;
+  line-height: 28px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.heading-h5 {
+  font-size: 16px;
+  line-height: 24px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.text-base-mid {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.text-base-min {
+  font-size: 13px;
+  line-height: 20px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.text-base-micro {
+  font-size: 11px;
+  line-height: 16px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.text-base-button{
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.text-base-nano {
+  font-size: 8px;
+  line-height: 16px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.text-cap-base {
+  font-size: 12px;
+  line-height: 16px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text-cap-micro {
+  font-size: 10px;
+  line-height: 16px;
+  // color: $base-color-text;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

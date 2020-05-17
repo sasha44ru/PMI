@@ -1,0 +1,24 @@
+@import './src/assets/style/helpers/variables';
+@import './src/assets/style/helpers/mixin';
+@import './src/assets/style/helpers/text';
+@import './src/assets/style/layout/index';
+@import './src/assets/style/lib/materialize/materialize';
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';
+@import './src/assets/style/fonts/fonts';
+
+@import './src/assets/style/block/navbar';
+@import './src/assets/style/block/header';
+@import './src/assets/style/block/news';
+@import './src/assets/style/block/info';
+@import './src/assets/style/block/employees';
+@import './src/assets/style/block/footer';
+@import './src/assets/style/block/form';
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}

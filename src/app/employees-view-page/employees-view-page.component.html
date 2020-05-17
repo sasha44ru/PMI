@@ -1,0 +1,46 @@
+<section class="employees-detail-wrap"  *ngIf="employees$ | async as employeesItem; else loading">
+  <div class="container">
+    <article class="employees-detail">
+      <div class="row">
+        <div class="col s12 m3 center">
+          <div class="employees-detail__photo">
+            <img src="{{employeesItem.imagePreview}}">
+          </div>
+          <div class="employees-detail__info">
+            <div *ngIf="employeesItem.shortDescriptionOne">
+              <div class="text">{{employeesItem.shortDescriptionOne}}</div>
+            </div>
+            <div *ngIf="employeesItem.position">
+              <label>Должность</label>
+              <div class="text">{{employeesItem.position}}</div>
+            </div>
+            <div *ngIf="employeesItem.eMail">
+              <label>E-mail</label>
+              <div class="text">{{employeesItem.eMail}}</div>
+            </div>
+            <div *ngIf="employeesItem.telephone">
+              <label>Телефон</label>
+              <div class="text">{{employeesItem.telephone}}</div>
+            </div>
+            <div *ngIf="employeesItem.shortDescriptionTwo">
+              <label>Дополнительная информация</label>
+              <div class="text">{{employeesItem.shortDescriptionTwo}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m9">
+          <div class="employees-detail__content">
+            <quill-view-html [content]="employeesItem.text"></quill-view-html>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+<ng-template #loading>
+  <section class="news-detail-wrap">
+    <div class="container">
+      <app-loader></app-loader>
+    </div>
+  </section>
+</ng-template>

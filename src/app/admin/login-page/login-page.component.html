@@ -1,0 +1,48 @@
+<section class="admin-form">
+  <div class="row">
+    <form class="col s12 l6 offset-l3 form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row mb-0">
+        <div class="col s12">
+          <h2 class="form__title">Войти в панель администратора</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="input-field col s12"
+          [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+        >
+          <input id="email" type="email" class="validate" formControlName="email">
+          <label for="email">Email</label>
+          <div
+            *ngIf="form.get('email').touched && form.get('email').invalid"
+            class="helper-text error-color">
+            <span *ngIf="form.get('email').errors.required">Поле E-mail обязательно для заполнения</span>
+            <span *ngIf="form.get('email').errors.email">Введите корректный E-mail</span>
+          </div>
+        </div>
+        <div
+          class="input-field col s12"
+          [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
+        >
+          <input id="password" type="password" class="validate" formControlName="password">
+          <label for="password">Пароль</label>
+          <div
+            *ngIf="form.get('password').touched && form.get('password').invalid"
+            class="helper-text error-color">
+            <span *ngIf="form.get('password').errors.required">Поле пароль обязательно для заполнения</span>
+            <span *ngIf="form.get('password').errors.minlength">
+            Пароль должен быть не менее {{form.get('password').errors.minlength.requiredLength}} символов.
+            Осталось символов: {{ form.get('password').errors.minlength.requiredLength - form.get('password').errors.minlength.actualLength }}
+              .
+          </span>
+          </div>
+        </div>
+        <div class="col s12">
+          <button class="waves-effect waves-light btn light-blue darken-3" [disabled]="form.invalid || submitted">
+            Войти
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

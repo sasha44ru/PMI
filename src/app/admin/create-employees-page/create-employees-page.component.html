@@ -1,0 +1,99 @@
+<section class="admin-form">
+  <div class="row">
+    <form class="col s12 form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row mb-0">
+        <div class="col s12">
+          <h2 class="form__title">Добавить сотрудника</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="input-field col s12"
+          [ngClass]="{invalid: form.get('lastName').touched && form.get('lastName').invalid}"
+        >
+          <input id="lastName" type="text" class="validate" formControlName="lastName">
+          <label for="lastName">Фамилия</label>
+          <div
+            *ngIf="form.get('lastName').touched && form.get('lastName').invalid"
+            class="helper-text error-color">
+            <span *ngIf="form.get('lastName').errors.required">Поле обязательно для заполнения</span>
+          </div>
+        </div>
+
+        <div
+          class="input-field col s12 m6"
+          [ngClass]="{invalid: form.get('firsName').touched && form.get('firsName').invalid}"
+        >
+          <input id="firsName" type="text" class="validate" formControlName="firsName">
+          <label for="firsName">Имя</label>
+          <div
+            *ngIf="form.get('firsName').touched && form.get('firsName').invalid"
+            class="helper-text error-color">
+            <span *ngIf="form.get('firsName').errors.required">Поле обязательно для заполнения</span>
+          </div>
+        </div>
+
+        <div
+          class="input-field col s12 m6"
+          [ngClass]="{invalid: form.get('patronymic').touched && form.get('patronymic').invalid}"
+        >
+          <input id="patronymic" type="text" class="validate" formControlName="patronymic">
+          <label for="patronymic">Отчество</label>
+          <div
+            *ngIf="form.get('patronymic').touched && form.get('patronymic').invalid"
+            class="helper-text error-color">
+            <span *ngIf="form.get('patronymic').errors.required">Поле обязательно для заполнения</span>
+          </div>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">phone</i>
+          <input id="telephone" type="tel" class="validate" formControlName="telephone">
+          <label for="telephone">Телефон</label>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <i class="material-icons prefix">email</i>
+          <input id="e-mail" type="email" class="validate" formControlName="eMail">
+          <label for="e-mail">E-mail</label>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <input id="position" type="text" class="validate" formControlName="position">
+          <label for="position">Должность</label>
+        </div>
+
+        <div class="file-field input-field col s12 m6">
+          <div class="btn">
+            <span>Файл фото</span>
+            <input type="file" formControlName="photoFile" (change)="onFileUpload($event)">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" formControlName="photoFilePath">
+          </div>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <textarea id="short-description--one" class="materialize-textarea" formControlName="shortDescriptionOne"></textarea>
+          <label for="short-description--one">Дополнение к описанию</label>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <textarea id="short-description--two" class="materialize-textarea" formControlName="shortDescriptionTwo"></textarea>
+          <label for="short-description--two">Дополнение к описанию</label>
+        </div>
+
+        <div class="col s12">
+          <label class="form__label">Описание</label>
+          <quill-editor formControlName="text"></quill-editor>
+        </div>
+
+        <div class="col s12">
+          <button type="submit" class="waves-effect waves-light btn light-blue darken-3 mt-4" [disabled]="form.invalid || submitted">
+            Добавить
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

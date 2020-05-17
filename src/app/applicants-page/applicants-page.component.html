@@ -1,0 +1,35 @@
+<section class="applicants-block" *ngIf="applicants$ | async as applicants; else loading">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://image.freepik.com/free-vector/student-illustration_23-2147513439.jpg">
+            <span class="card-title">Бакалаврам</span>
+          </div>
+          <div class="card-content">
+            <p>{{applicants.undergraduateInfo}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://cdn.dribbble.com/users/3504543/screenshots/6833155/freelancer__1_-51.png">
+            <span class="card-title">Магистрам</span>
+          </div>
+          <div class="card-content">
+            <p>{{applicants.magistracyInfo}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #loading>
+  <section class="news-list">
+    <div class="container">
+      <app-loader></app-loader>
+    </div>
+  </section>
+</ng-template>

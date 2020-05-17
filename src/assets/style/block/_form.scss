@@ -1,0 +1,43 @@
+.admin-form {
+  .form {
+    margin-top: 3rem;
+
+    &__title {
+      @extend .heading-h2;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    &__label{
+      @extend .text-base-mid;
+    }
+
+    /* label focus color */
+    .input-field input:focus + label, .input-field textarea:focus + label {
+      color: #039be5;
+    }
+
+    /* label underline focus color */
+    .input-field input:focus, .input-field textarea:focus {
+      border-bottom: 1px solid #0277bd;
+      box-shadow: 0 1px 0 0 #0277bd;
+    }
+
+    /* valid color */
+    .input-field input.valid, .input-field textarea.valid {
+      border-bottom: 1px solid #00c853;
+      box-shadow: 0 1px 0 0 #00c853;
+    }
+
+    /* invalid color */
+    .input-field input.invalid, .invalid.input-field input, invalid.input-field input:focus,
+    .input-field textarea.invalid, .invalid.input-field textarea, invalid.input-field textarea:focus{
+      border-bottom: 1px solid $error-color;
+      box-shadow: 0 1px 0 0 $error-color;
+    }
+
+    /* icon prefix focus color */
+    .input-field .prefix.active {
+      color: #039be5;
+    }
+  }
+}

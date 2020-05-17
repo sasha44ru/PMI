@@ -1,0 +1,42 @@
+<section class="admin-form" *ngIf="!loading">
+  <div class="row">
+    <form class="col s12 form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row mb-0">
+        <div class="col s12">
+          <h2 class="form__title">Редактирование информации о кафедре</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <label class="form__label">Информация о кафедре</label>
+          <quill-editor formControlName="text"></quill-editor>
+          <div class="separator"></div>
+        </div>
+
+        <div
+          class="input-field col s12"
+          [ngClass]="{invalid: form.get('descriptionForMain').touched && form.get('descriptionForMain').invalid}"
+        >
+          <textarea id="description-for-main" class="materialize-textarea" formControlName="descriptionForMain"></textarea>
+          <label for="description-for-main">Краткое описание отображаемое на главной странице</label>
+          <div
+            *ngIf="form.get('descriptionForMain').touched && form.get('descriptionForMain').invalid"
+            class="helper-text error-color">
+            <span *ngIf="form.get('descriptionForMain').errors.required">Поле обязательно для заполнения</span>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <button type="submit" class="waves-effect waves-light btn light-blue darken-3 mt-4" [disabled]="form.invalid || submitted">
+            Обновить
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<ng-template *ngIf="loading">
+  <section class="admin-form">
+    <app-loader></app-loader>
+  </section>
+</ng-template>

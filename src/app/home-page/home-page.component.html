@@ -1,0 +1,87 @@
+<section class="news-block">
+  <div class="container">
+    <div class="news-block__title">Новости</div>
+    <div class="carousel carousel-slider center z-depth-5" #carousel>
+      <div class="carousel-item cursor-pointer" *ngFor="let newsItem of news;let i = index; let last = last"
+           [routerLink]="['/news', newsItem.id]" #carouselItem>
+        <h2>{{newsItem.title}}</h2>
+        <p>{{newsItem.shortDescription}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-block" *ngIf="about$ | async as about;">
+  <div class="container">
+    <div class="row d-sm-flex align-items-center">
+      <div class="col s12 m6">
+        <img src="https://assets-ouch.icons8.com/preview/921/cdd912b0-27a4-48be-bc91-0aec7570dbce.png"
+             alt="Иллюстрация" width="100%" height="auto">
+      </div>
+      <div class="col s12 m6">
+        <div class="info-block__title">История кафедры</div>
+        <div class="info-block__text">{{about.descriptionForMain}}
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+          <a class="waves-effect waves-light btn" [routerLink]="['/about']">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-block">
+  <div class="container">
+    <div class="info-block__title">Кафедра сегодня</div>
+    <div class="info-block__text">
+      <img src="https://cdni.iconscout.com/illustration/premium/thumb/programming-skills-1946874-1649524.png"
+           height="200"
+           alt="Иллюстрация" class="ml-sm-3 mb-sm-3 float-sm-right mx-auto d-block">
+      В настоящее время кафедра имеет долгосрочные контакты о сотрудничестве с различными организациями
+      (прохождение практики студентов, выполнение ВКР, трудоустройство, обучение в аспирантуре и магистратуре,
+      проведение методических обучающих семинаров, обмен научной информацией на различных конференциях,
+      прохождение стажировки и др.):
+      <br>
+      • Факультет вычислительной математики и кибернетики, Научно-исследовательский центр Московского
+      государственного университета им. М.В. Ломоносова;
+      <br>
+      • Ярославский государственный университет имени П.Г. Демидова.
+      <br>
+      • Ярославский государственный педагогический университет имени К.Д. Ушинского
+      <br>
+      • Ярославский государственный технический университет ;
+      <br>
+      • Институт программных систем РАН, г. Переславль-Залесский;
+      <br>
+      • Костромской государственный технологический университет;
+      <br>
+      • ЗАО «Компьютерные системы для бизнеса», г. Москва, г. Санкт-Петербург;
+      <br>
+      • ООО «Гелиос-С», г. Кострома;
+      <br>
+      • ОАО «Ростелеком», г. Кострома;
+      <br>
+      • ООО «РКЦ Пульс», г. Кострома;
+      <br>
+      • Школы г. Костромы и области;
+      На протяжении длительного времени кафедра поддерживает внешние связи с МГУ, СПбГУ и другими ведущими вузами.
+      Студенты принимают участие в совместных проектах: по космофизическому образованию в исследованиях по данным,
+      полученным с малогабаритного спутника «Университетский - Татьяна»; стажировка студентов в Европейском центре
+      ядерных исследований (CERN, Женева), стажировка преподавателей. На факультете проводятся научно-практические
+      конференции, курсы повышения квалификации учителей, школа космофизики для учащихся средних школ города и
+      области и др.
+      Выпускники кафедры работают в гг. Москва, Санкт-Петербург, на предприятиях и в школах г. Костромы и области.
+    </div>
+  </div>
+</section>
+
+<section class="info-block" *ngIf="applicants$ | async as applicants;">
+  <div class="container">
+    <div class="info-block__title">Обучение на кафедре</div>
+    <div class="info-block__text">{{applicants.descriptionForMain}}
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+      <a class="waves-effect waves-light btn" [routerLink]="['/applicants']">Подробнее</a>
+    </div>
+  </div>
+</section>

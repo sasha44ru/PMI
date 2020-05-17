@@ -1,0 +1,16 @@
+.header{
+  &-block{
+    background: $primary-color;
+    &__title{
+      font-size: 70px;
+      line-height: 126px;
+      font-style: normal;
+      font-weight: normal;
+      color: $base-lighten-5;
+    }
+    &__sub-title{
+      @extend .heading-h4;
+      color: $base-lighten-5;
+    }
+  }
+}

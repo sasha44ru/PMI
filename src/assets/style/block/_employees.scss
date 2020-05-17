@@ -1,0 +1,35 @@
+.employees {
+  &-detail {
+    &-wrap {
+      margin: 3rem 0;
+
+      .ql-editor {
+        padding: 0;
+      }
+    }
+
+    &__info {
+      label {
+        @extend .text-base-micro;
+        color: $text;
+        margin-top: 1rem;
+      }
+
+      .text {
+        @extend .text-base-min;
+        color: $text-dark;
+      }
+    }
+
+    &__photo {
+      img{
+        width: 100%;
+      }
+    }
+
+    &__content{
+
+    }
+
+  }
+}

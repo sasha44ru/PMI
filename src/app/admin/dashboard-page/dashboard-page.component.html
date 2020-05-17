@@ -1,0 +1,59 @@
+<section class="dashboard-block" *ngIf="!loadingNews && !loadingEmployees">
+  <div class="block z-depth-5">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="last_name" type="text" class="validate" [(ngModel)]="searchNews">
+        <label for="last_name">Найти новость</label>
+      </div>
+    </div>
+    <div>
+      <div class="row d-flex align-items-center">
+        <div class="col s1 title">#</div>
+        <div class="col s3 title">Заголовок</div>
+        <div class="col s4 title">Краткое описание</div>
+        <div class="col s2 title">Дата</div>
+        <div class="col title">Дейсвия</div>
+      </div>
+      <div class="row d-flex align-items-center" *ngFor="let newsItem of news | searchNews:searchNews; let idx = index">
+        <div class="col s1 title">{{idx + 1}}</div>
+        <div class="col s3 title">{{newsItem.title}}</div>
+        <div class="col s4 title">{{newsItem.shortDescription}}</div>
+        <div class="col s2 title">{{newsItem.date | date: 'short':null: 'ru'}}</div>
+        <div class="col title">
+          <i class="material-icons edit mr-2" [routerLink]="['/admin','edit-news',newsItem.id]">edit</i>
+          <i class="material-icons remove mr-2" (click)="removeNews(newsItem.id)">delete</i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block z-depth-5">
+    <div>
+      <div class="row d-flex align-items-center">
+        <div class="col s1 title">#</div>
+        <div class="col s3 title">Фамилия</div>
+        <div class="col s4 title">Имя</div>
+        <div class="col s2 title">Отчество</div>
+        <div class="col title">Дейсвия</div>
+      </div>
+      <div class="row d-flex align-items-center" *ngFor="let employeesItem of employees let idx = index">
+        <div class="col s1 title">{{idx + 1}}</div>
+        <div class="col s3 title">{{employeesItem.lastName}}</div>
+        <div class="col s4 title">{{employeesItem.firsName}}</div>
+        <div class="col s2 title">{{employeesItem.patronymic}}</div>
+        <div class="col title">
+          <i class="material-icons edit mr-2" [routerLink]="['/admin','edit-employees',employeesItem.id]">edit</i>
+          <i class="material-icons remove mr-2" (click)="removeEmployees(employeesItem.id)">delete</i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template *ngIf="loadingNews && loadingEmployees">
+  <section class="dashboard-block">
+    <div class="block">
+      <app-loader></app-loader>
+    </div>
+  </section>
+</ng-template>
+

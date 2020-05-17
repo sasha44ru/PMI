@@ -1,0 +1,67 @@
+<header class="header">
+  <div class="header-block d-flex flex-column" #headerBlock>
+    <div class="container">
+      <nav>
+        <div class="nav-wrapper">
+          <a routerLink="/home" class="brand-logo">
+            <img src="./assets/img/logo.png">
+            ПМИ
+          </a>
+          <a data-target="mobile-demo" class="sidenav-trigger cursor-pointer"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li *ngFor="let link of links" routerLinkActive="active">
+              <a [routerLink]="[link.url]">{{link.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container m-auto">
+      <div class="header-block__title center-align">{{ headerTitle }}</div>
+      <div class="header-block__sub-title center-align">{{ headerSubTitle }}</div>
+    </div>
+  </div>
+  <ul class="sidenav" id="mobile-demo" #sideNav>
+    <li routerLinkActive="active">
+      <a routerLink="/">Главная</a>
+    </li>
+    <li *ngFor="let link of links" routerLinkActive="active">
+      <a [routerLink]="[link.url]">{{link.name}}</a>
+    </li>
+  </ul>
+</header>
+<main>
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</main>
+<footer class="page-footer teal footer-block">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 l3">
+        <div class="footer-block__title">Информация</div>
+        <div class="footer-block__info">
+          При перепечатке текстовой информации и фотографий ссылка на сайт необязательна. Если Вы обнаружили
+          нерелевантную информацию или у Вас есть какие-то проблемы с работой сайта, то обращайтесь по почте
+          на pmi.kgu@gmail.com
+        </div>
+      </div>
+      <div class="col s12 l3">
+        <div class="footer-block__title">Полезные ссылки</div>
+        <div class="footer-block__text">
+          <a target="_blank" href="https://www.ksu.edu.ru/">КГУ</a>
+          <a target="_blank" href="https://vk.com/public170865053">ИФМЕН ВК</a>
+          <a href="https://minobrnauki.gov.ru/">Министерство науки и высшего образования Российской
+            Федерации</a>
+        </div>
+      </div>
+      <div class="col s12 l4">
+        <div class="footer-block__title">Дополнительная информация</div>
+        <div class="footer-block__text">
+          <a routerLink="/admin">Вход в панель администратора</a>
+        </div>
+      </div>
+    </div>
+    <div class="sub-footer">
+      © 2020 Кафедра прикладной математики и инфомационных технологий КГУ
+    </div>
+  </div>
+</footer>

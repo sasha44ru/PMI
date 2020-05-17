@@ -1,0 +1,26 @@
+<section class="news-detail-wrap" *ngIf="news$ | async as news; else loading">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <article class="news-detail">
+          <h1 class="news-detail__title">{{news.title}}</h1>
+          <div class="news-detail__info">
+            <div class="news-header">
+              <span class="news-date">{{news.date | date: 'd MMMM y, h:mm':null: 'ru'}}</span>
+            </div>
+          </div>
+          <div class="news-detail__content">
+            <quill-view-html [content]="news.text"></quill-view-html>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #loading>
+  <section class="news-detail-wrap">
+    <div class="container">
+      <app-loader></app-loader>
+    </div>
+  </section>
+</ng-template>

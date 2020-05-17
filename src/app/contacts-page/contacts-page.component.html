@@ -1,0 +1,60 @@
+<section class="contact-block" *ngIf="contacts">
+  <div class="container">
+    <div class="row">
+        <div class="row">
+          <div class="col s12 m6 mb-3 d-flex" *ngIf="contacts.contactPerson">
+            <i class="material-icons base-color prefix align-self-center mr-3">account_circle</i>
+            <div class="align-self-center">
+              <label>Контактное лицо</label>
+              <div>{{contacts.contactPerson}}</div>
+            </div>
+          </div>
+          <div class="col s12 m6 mb-3 d-flex" *ngIf="contacts.addInfo">
+            <i class="material-icons base-color prefix align-self-center mr-3">announcement</i>
+            <div class="align-self-center">
+              <label>Дополнительная информация</label>
+              <div>{{contacts.addInfo}}</div>
+            </div>
+          </div>
+          <div class="col s12 m6 mb-3 d-flex" *ngIf="contacts.onePhone">
+            <i class="material-icons base-color prefix align-self-center mr-3">phone</i>
+            <div class="align-self-center">
+              <label>Телефон</label>
+              <div>{{contacts.onePhone}}</div>
+            </div>
+          </div>
+          <div class="col s12 m6 mb-3 d-flex" *ngIf="contacts.twoPhone">
+            <i class="material-icons base-color prefix align-self-center mr-3">phone</i>
+            <div class="align-self-center">
+              <label>Телефон</label>
+              <div>{{contacts.twoPhone}}</div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 mb-3 d-flex" *ngIf="contacts.oneEmail">
+            <i class="material-icons base-color prefix align-self-center mr-3">email</i>
+            <div class="align-self-center">
+              <label>E-mail</label>
+              <div>{{contacts.oneEmail}}</div>
+            </div>
+          </div>
+          <div class="col s12 m6 mb-3 d-flex" *ngIf="contacts.twoEmail">
+            <i class="material-icons base-color prefix align-self-center mr-3">email</i>
+            <div class="align-self-center">
+              <label>E-mail</label>
+              <div>{{contacts.twoEmail}}</div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1239.2663730683967!2d40.91904456654116!3d57.73637947483771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ad5048ea29e907%3A0x3b540d99b1f8c252!2z0JrQvtGB0YLRgNC-0LzRgdC60L7QuSDQs9C-0YHRg9C00LDRgNGB0YLQstC10L3QvdGL0Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgiwg0LrQvtGA0L_Rg9GBINCV!5e0!3m2!1sru!2sru!4v1589305321809!5m2!1sru!2sru"
+          width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+          tabindex="0"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

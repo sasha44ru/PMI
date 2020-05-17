@@ -1,0 +1,16 @@
+.info{
+  &-block{
+    border-bottom: 1px solid $primary-color;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    &__title{
+      margin-bottom: 1rem;
+      @extend .heading-h3;
+      color: $text-dark;
+    }
+    &__text{
+      @extend .text-base-mid;
+      color: $text;
+    }
+  }
+}

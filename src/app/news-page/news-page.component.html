@@ -1,0 +1,33 @@
+<section class="news-list" *ngIf="news$ | async as news; else loading">
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s12 mt-4">
+        <input id="last_name" type="text" class="validate" [(ngModel)]="searchNews">
+        <label for="last_name">Найти новость</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <article class="news-group" *ngFor="let newsItem of news | searchNews:searchNews;">
+          <header class="news-header">
+            <span class="news-date">{{newsItem.date | date: 'd MMMM y, h:mm':null: 'ru'}}</span>
+          </header>
+          <div class="news-content">
+            <a class="news-link" [routerLink]="['/news',newsItem.id]">
+              <h2 class="news-title">{{newsItem.title}}</h2>
+            </a>
+            <span class="news-text">{{newsItem.shortDescription}}</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<!--[(ngModel)]="searchNews"-->
+<ng-template #loading>
+  <section class="news-list">
+    <div class="container">
+      <app-loader></app-loader>
+    </div>
+  </section>
+</ng-template>

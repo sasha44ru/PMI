@@ -1,0 +1,54 @@
+.dashboard-block {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 10rem;
+
+  .block{
+    border: 1px solid #0D47A1;
+    margin-top: 4rem;
+    .row{
+      padding-top: 20px;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+      border-top: 1px solid #fff;
+      &:first-child{
+        border: none;
+      }
+      &:nth-child(2n) {
+        background-color: #eeeeee ;
+      }
+
+    }
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .info {
+
+  }
+
+  .input-field input:focus + label, .input-field textarea:focus + label {
+    color: #039be5;
+  }
+
+  .input-field input:focus, .input-field textarea:focus {
+    border-bottom: 1px solid #0277bd;
+    box-shadow: 0 1px 0 0 #0277bd;
+  }
+  .edit{
+    &:hover{
+      color: #0277bd;
+      cursor: pointer;
+    }
+  }
+  .remove{
+    &:hover{
+      color: #E8523D;
+      cursor: pointer;
+    }
+  }
+}

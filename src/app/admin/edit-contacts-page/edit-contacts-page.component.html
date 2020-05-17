@@ -1,0 +1,57 @@
+<section class="admin-form" *ngIf="!loading">
+  <div class="row">
+    <form class="col s12 form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row mb-0">
+        <div class="col s12">
+          <h2 class="form__title">Редактирование контактной информации</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <input type="text" id="contact-person" class="validate" formControlName="contactPerson"/>
+          <label for="contact-person">Контактное лицо</label>
+          <div class="separator"></div>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <textarea id="add-info" class="materialize-textarea" formControlName="addInfo"></textarea>
+          <label for="add-info">Дополнительная информация</label>
+          <div class="separator"></div>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <input type="text" id="one-phone" class="validate" formControlName="onePhone"/>
+          <label for="one-phone">Телефон №1</label>
+          <div class="separator"></div>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" id="two-phone" class="validate" formControlName="twoPhone"/>
+          <label for="two-phone">Телефон №2</label>
+          <div class="separator"></div>
+        </div>
+
+        <div class="input-field col s12 m6">
+          <input type="text" id="one-email" class="validate" formControlName="oneEmail"/>
+          <label for="one-email">E-mail №1</label>
+          <div class="separator"></div>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" id="two-email" class="validate" formControlName="twoEmail"/>
+          <label for="two-email">E-mail №2</label>
+          <div class="separator"></div>
+        </div>
+
+        <div class="col s12">
+          <button type="submit" class="waves-effect waves-light btn light-blue darken-3 mt-4" [disabled]="form.invalid || submitted">
+            Обновить
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+<ng-template *ngIf="loading">
+  <section class="admin-form">
+    <app-loader></app-loader>
+  </section>
+</ng-template>

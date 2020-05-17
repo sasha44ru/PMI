@@ -1,0 +1,40 @@
+<section class="admin-form">
+  <div class="row">
+    <form class="col s12 form" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="row mb-0">
+        <div class="col s12">
+          <h2 class="form__title">Создание новости</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="input-field col s12"
+          [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
+        >
+          <input id="title" type="text" class="validate" formControlName="title" #titleNews>
+          <label for="title">Заголовок</label>
+          <div
+            *ngIf="form.get('title').touched && form.get('title').invalid"
+            class="helper-text error-color">
+            <span *ngIf="form.get('title').errors.required">Поле обязательно для заполнения</span>
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="short-description" class="materialize-textarea" formControlName="shortDescription"></textarea>
+          <label for="short-description">Краткое описание(не обязательное)</label>
+        </div>
+
+        <div class="col s12">
+          <label class="form__label">Контент новости</label>
+          <quill-editor formControlName="text"></quill-editor>
+        </div>
+
+        <div class="col s12">
+          <button type="submit" class="waves-effect waves-light btn light-blue darken-3 mt-4" [disabled]="form.invalid || submitted">
+            Создать новость
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="about-block" *ngIf="about$ | async as about; else loading">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <quill-view-html [content]="about.text"></quill-view-html>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #loading>
+  <section class="news-detail-wrap">
+    <div class="container">
+      <app-loader></app-loader>
+    </div>
+  </section>
+</ng-template>

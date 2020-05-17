@@ -1,0 +1,83 @@
+.news {
+  &-block {
+    border-bottom: 1px solid $primary-color;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    &__title {
+      margin-bottom: 1rem;
+      @extend .heading-h3;
+      color: $text-dark;
+    }
+
+    &__text {
+      @extend .text-base-mid;
+      color: $text;
+    }
+
+    .carousel {
+      background-image: url("./assets/img/news-arousel.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(115, 117, 117, 0.15);
+      //background: linear-gradient(0deg, rgba(51, 64, 89, 0.4), rgba(51, 64, 89, 0.4));
+      .indicators .indicator-item {
+        background-color: $text-dark;
+
+        &.active {
+          background-color: $primary-color;
+        }
+      }
+
+      &.carousel-slider {
+        .carousel-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  &-date {
+    @extend .text-base-micro;
+    color: $text-light;
+  }
+
+  &-title {
+    @extend .heading-h2;
+    color: $text-dark;
+    margin: 0;
+  }
+
+  &-text {
+    @extend .text-base-mid;
+    color: $text;
+  }
+
+  &-group {
+    padding: 2rem 0;
+    border-top: 1px solid $base;
+  }
+
+  &-detail {
+    &-wrap {
+      margin: 3rem 0;
+      .ql-editor {
+        padding: 0;
+      }
+    }
+
+    &__title {
+      @extend .heading-h1;
+      color: $text-dark;
+      margin: 0;
+    }
+    &__content{
+      margin-top: 2rem;
+    }
+  }
+}
+

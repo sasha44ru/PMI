@@ -1,0 +1,32 @@
+nav {
+  position: relative;
+  top: 30px;
+  background: transparent;
+
+  .brand-logo {
+    img {
+      width: 50px;
+      height: 30px;
+    }
+  }
+
+  ul a, .brand-logo {
+    color: $base-lighten-5;
+  }
+
+  .dropdown-content {
+    background: $primary-color;
+
+    li {
+      & > a, & > span {
+        color: $base-lighten-5;
+      }
+    }
+    li.active, li:hover {
+      background-color: $base-lighten-5;
+      > a {
+        color:  $primary-color;
+      }
+    }
+  }
+}
