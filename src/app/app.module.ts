@@ -18,6 +18,8 @@ import {SharedModule} from './shared/shared.module';
 import {AuthInterceptor} from './shared/auth.interceptor';
 import {FormsModule} from '@angular/forms';
 import { EmployeesViewPageComponent } from './employees-view-page/employees-view-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(ruLocale, 'ru');
 
@@ -44,7 +46,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
